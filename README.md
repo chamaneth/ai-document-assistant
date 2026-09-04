@@ -21,31 +21,6 @@ An offline, privacy-first desktop application for intelligent document analysis,
 
 ---
 
-## 🏗️ System Architecture
-
-```mermaid
-flowchart TD
-    subgraph UI ["Desktop Client (Electron + React)"]
-        A[React UI / Vite] -->|IPC / HTTP REST| B[FastAPI Backend]
-    end
-
-    subgraph Backend ["Local Backend Core (FastAPI)"]
-        B --> C[Document Ingestion Service]
-        B --> D[RAG Query Engine]
-        
-        C -->|PDF / TXT Parsing| E[Recursive Character Splitter]
-        E -->|Chunks| F[Local Embedding Model\nall-MiniLM-L6-v2]
-        F -->|Vector Embeddings| G[(ChromaDB Vector Store)]
-        
-        D -->|Semantic Search| G
-        G -->|Top-k Relevant Context| H[Prompt Synthesizer]
-        H -->|Context + Query| I[Local LLM Inference Engine\nLaMini-Flan-T5]
-        I -->|Answer + Citations| B
-    end
-```
-
----
-
 ## 🛠️ Tech Stack
 
 | Domain | Technology | Purpose |

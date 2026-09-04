@@ -1,0 +1,48 @@
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.*
+*.env
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# ==========================================
+# Virtual Environments & Caches
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================================
+# Local Vector DB, AI Models & Uploads
+# ==========================================
+.chroma_db/
+.models/
+uploads/
+data/*.json
+!data/.gitkeep
+
+# Local SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# PyInstaller Build & Dist Outputs
+# ==========================================
+build/
+dist/
+
+# ==========================================
+# Logs
+# ==========================================
+*.log

@@ -1,0 +1,27 @@
+{
+  "name": "ai-document-assistant-root",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Local Offline Desktop AI Document Assistant powered by RAG, FastAPI, ChromaDB, and Electron",
+  "author": "AI Software Architect",
+  "keywords": [
+    "security",
+    "privacy",
+    "offline-ai",
+    "rag",
+    "chromadb",
+    "fastapi",
+    "electron",
+    "react",
+    "desktop-app",
+    "encryption",
+    "huggingface"
+  ],
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build:backend": "cd backend && .\\.venv\\Scripts\\pyinstaller.exe rag_backend.spec --noconfirm",
+    "start": "npm --prefix desktop start",
+    "dist": "npm --prefix desktop run dist"
+  }
+}

@@ -1,0 +1,103 @@
+# ==========================================
+# Environment & Sensitive Files
+# ==========================================
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+
+# Private licenses and generated keys
+licenses/*.txt
+licenses/*.key
+licenses/*.json
+!licenses/.gitkeep
+
+# ==========================================
+# Dependencies
+# ==========================================
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# ==========================================
+# Builds & Packaging Artifacts
+# ==========================================
+dist/
+*/dist/
+build/
+*/build/
+frontend_dist/
+*/frontend_dist/
+out/
+Release/
+*.exe
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+
+# PyInstaller build spec
+*.spec
+!rag_backend.spec
+
+# ==========================================
+# Application Data, Local Vector DB & Uploads
+# ==========================================
+.chroma_db/
+*/.chroma_db/
+.models/
+*/.models/
+uploads/
+*/uploads/
+data/*.json
+backend/data/*.json
+!data/.gitkeep
+!backend/data/.gitkeep
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# OS & IDE Files
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

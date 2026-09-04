@@ -18,7 +18,7 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isPasteModalOpen, setIsPasteModalOpen] = useState(false);
   const [isLicenseModalOpen, setIsLicenseModalOpen] = useState(false);
-  const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [showAdminPanel, setShowAdminPanel] = useState(true);
   const [licenseInfo, setLicenseInfo] = useState(null);
   
   const [appSettings, setAppSettings] = useState({
@@ -272,7 +272,7 @@ export default function App() {
         onOpenLicense={() => setIsLicenseModalOpen(true)}
       />
       
-      {activeTab === 'chat' || !showAdminPanel ? (
+      {activeTab === 'chat' ? (
         <div className="flex flex-1 overflow-hidden">
           <Sidebar
             onUploadPDF={handleUploadPDF}

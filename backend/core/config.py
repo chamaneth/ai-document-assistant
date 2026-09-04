@@ -12,7 +12,7 @@ class Settings:
     API_SECRET_KEY: str = os.environ.get("API_SECRET_KEY", "local_sec_token_984712839")
 
     # Commercial Enterprise & UX Features
-    ENABLE_ADMIN_PANEL: bool = os.environ.get("ENABLE_ADMIN_PANEL", "false").lower() == "true"
+    ENABLE_ADMIN_PANEL: bool = os.environ.get("ENABLE_ADMIN_PANEL", "true").lower() == "true"
     COMPANY_NAME: str = os.environ.get("COMPANY_NAME", "AI Document Assistant")
 
     MODELS_DIR: str = os.path.join(BASE_DIR, ".models")

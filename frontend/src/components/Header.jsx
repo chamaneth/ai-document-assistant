@@ -1,9 +1,9 @@
 import React from 'react';
-import { Cpu, MessageSquare, Server, Minus, Square, X, Wifi, WifiOff, Settings, Key } from 'lucide-react';
+import { Cpu, MessageSquare, LayoutDashboard, Minus, Square, X, Wifi, WifiOff, Settings, Key } from 'lucide-react';
 
 export default function Header({ 
   backendConnected, 
-  showAdminPanel = false, 
+  showAdminPanel = true, 
   activeTab, 
   setActiveTab, 
   onOpenSettings,
@@ -24,12 +24,8 @@ export default function Header({
             <h1 className="font-bold text-sm tracking-wide bg-gradient-to-r from-white via-slate-200 to-cyber-muted bg-clip-text text-transparent font-['Outfit']">
               AI DOCUMENT ASSISTANT
             </h1>
-            <span className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full border ${
-              showAdminPanel 
-                ? 'bg-purple-500/10 text-purple-400 border-purple-500/20'
-                : 'bg-blue-500/10 text-blue-400 border-blue-500/20'
-            }`}>
-              {showAdminPanel ? 'OFFLINE PRO' : 'OFFLINE STANDARD'}
+            <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full border bg-blue-500/10 text-blue-400 border-blue-500/20">
+              OFFLINE LOCAL
             </span>
           </div>
           <p className="text-[10px] text-cyber-muted font-mono">100% Private Offline AI</p>
@@ -50,19 +46,17 @@ export default function Header({
           <span>Chat Workspace</span>
         </button>
 
-        {showAdminPanel && (
-          <button
-            onClick={() => setActiveTab('admin')}
-            className={`px-3 py-1.5 rounded-lg font-medium flex items-center space-x-2 transition-all ${
-              activeTab === 'admin'
-                ? 'bg-blue-600 text-white shadow-cyber-glow'
-                : 'text-cyber-muted hover:text-white'
-            }`}
-          >
-            <Server className="w-3.5 h-3.5" />
-            <span>Admin Telemetry</span>
-          </button>
-        )}
+        <button
+          onClick={() => setActiveTab('admin')}
+          className={`px-3 py-1.5 rounded-lg font-medium flex items-center space-x-2 transition-all ${
+            activeTab === 'admin'
+              ? 'bg-blue-600 text-white shadow-cyber-glow'
+              : 'text-cyber-muted hover:text-white'
+          }`}
+        >
+          <LayoutDashboard className="w-3.5 h-3.5" />
+          <span>Admin Dashboard</span>
+        </button>
 
         <button
           onClick={onOpenLicense}
